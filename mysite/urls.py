@@ -18,7 +18,7 @@ from django.urls import path, include
 
 
 '''
-
+bookmark 임포트
 from bookmark.views import BookmarkLV, BookmarkDV
 from django.views.generic import ListView, DetailView
 from bookmark.models import Bookmark
@@ -28,10 +28,9 @@ from bookmark import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-
-
-
+    path('bookmark/', include('bookmark.urls')),
+    path('blog/', include('blog.urls')),
+    
 
     # class-based views (모델.py에 클래스나 함수 정의 후 불러오기)
     # path('bookmark/', BookmarkLV.as_view(), name='index'),
