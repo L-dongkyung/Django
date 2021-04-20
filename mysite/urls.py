@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from mysite.views import HomeView
 
 
 '''
@@ -27,6 +28,7 @@ from django.conf.urls import url
 from bookmark import views
 
 urlpatterns = [
+    path('',HomeView.as_view(), name='home'),
     path('admin/', admin.site.urls),
     path('bookmark/', include('bookmark.urls')),
     path('blog/', include('blog.urls')),
