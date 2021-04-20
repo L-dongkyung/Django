@@ -3,7 +3,7 @@
 <h3>Blog List</h3>
 <br>
 {% for post in posts %}
-    <h3><a href="'{{ post.get_absolute_url }}">{{ post.title }}</a></h3>   {% url 'detail' post.id %}
+    <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
     {{ post.modify_dt|date:"N D, Y" }}
     <p>{{ post.description }}</p>
 {% endfor %}
@@ -12,7 +12,7 @@
 
 <div>
     <span>
-        {% if page_dbj.has_previous %}
+        {% if page_obj.has_previous %}
             <a href="?page={{ page_obj.previous_page_number }}">PreviousPage</a>
         {% endif %}
 
