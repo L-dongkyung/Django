@@ -135,3 +135,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 TAGGIT_CASE_INSENSITIVE = True
 TAGGIT_LIMIT=50
+
+DISQUS_SHORTNAME = 'django-book-3'
+DISQUS_MY_DOMAIN = 'http://localhost:8000'
+
