@@ -1,7 +1,6 @@
-<h1>Blog List</h1>
-<h2>Blog List</h2>
-<h3>Blog List</h3>
-<br>
+{% extends 'base.html' %}
+{% block title %}post_all{% endblock %}
+{% block content %}
     {% for post in posts %}
         <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
         {{ post.modify_dt|date:"N D, Y" }}
@@ -23,3 +22,4 @@
         {% endif %}
     </span>
 </div>
+{% endblock %}

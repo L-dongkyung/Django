@@ -1,5 +1,5 @@
-<h2>{{ object.title }}</h2>
-
+{% extends "base.html" %}
+{% block extra-style %}
 <style>
     .post-body{
     width: 80%;
@@ -8,6 +8,15 @@
     font-size: 16px;
     }
 </style>
+{% endblock %}
+
+{% block title %}post_detail{% endblock %}
+
+{% block content %}
+
+<h2>{{ object.title }}</h2>
+
+
 
 
 <div class="post-body">
@@ -67,3 +76,5 @@
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 </div>
+
+{% endblock %}
