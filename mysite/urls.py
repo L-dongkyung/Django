@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from mysite.views import HomeView
+from django.conf.urls.static import static
+from django.conf import settings
 
 
 '''
@@ -32,6 +34,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('bookmark/', include('bookmark.urls')),
     path('blog/', include('blog.urls')),
+    path('photo/', include('photo.urls')),
     
 
     # class-based views (모델.py에 클래스나 함수 정의 후 불러오기)
@@ -42,6 +45,4 @@ urlpatterns = [
     # path('bookmark/', ListView.as_view(model=Bookmark), name='index'),
     # path('bookmark/<int:pk>/', DetailView.as_view(model=Bookmark), name='detail'),
 
-
-
-]
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
