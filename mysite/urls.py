@@ -19,6 +19,8 @@ from mysite.views import HomeView
 from django.conf.urls.static import static
 from django.conf import settings
 
+from mysite.views import UserCreateView, UserCreateDoneTV
+
 
 '''
 bookmark 임포트
@@ -35,6 +37,9 @@ urlpatterns = [
     path('bookmark/', include('bookmark.urls')),
     path('blog/', include('blog.urls')),
     path('photo/', include('photo.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/register/', UserCreateView.as_view(), name='register'),
+    path('accounts/register/done/', UserCreateDoneTV.as_view(), name='register_done'),
     
 
     # class-based views (모델.py에 클래스나 함수 정의 후 불러오기)
